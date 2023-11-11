@@ -1,0 +1,64 @@
+﻿@model DoAnNhom1.Models.Tree
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center">Xóa cây</h2>
+
+<h3 class="text-danger">Bạn có chắc muốn xóa cây này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Tên vùng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area.NameArea)
+        </dd>
+
+        <dt>
+            Tên cây
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameTree)
+        </dd>
+
+        <dt>
+            Mô tả cây
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionTree)
+        </dd>
+
+        <dt>
+            Giá cây
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+           Hình ảnh cây
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.ImageTree)" alt="Image" width="450" height="200" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay về danh sách", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

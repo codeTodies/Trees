@@ -1,0 +1,50 @@
+﻿@model DoAnNhom1.Models.Customer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center">Xóa liên hệ</h2>
+
+<h3 class="text-danger">Bạn có chắc muốn xóa liên hệ này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên người dùng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameCus)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailCus)
+        </dd>
+
+        <dt>
+            Mật khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneCus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay về danh sách", "GetInfo", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>
+

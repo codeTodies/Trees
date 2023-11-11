@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "TC";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+
+<div class="PlantTrees-bg" style="background-color: #1e3937;">
+    <div class="container " style="padding-top:5.5rem;">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="thumbnail m-2 overlay-sm">
+                        <a href="#">
+                            <img src="@Url.Content(item.ImgArea)" alt="mb" class="img-fluid rounded" style="width: 100%;">
+                        </a>
+                        <div class="view-button-bottom">
+                            @Html.ActionLink("View All", "Index", "RenderTree", new { id = item.IDArea }, new { @class = "btn btn-outline-light btn-lg btn-block font-weight-bold text-uppercase" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

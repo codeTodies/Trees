@@ -1,0 +1,94 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<DoAnNhom1.Models.Tree>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center">DANH SÁCH CÂY</h2>
+
+@using (Html.BeginForm("Index", "Trees", FormMethod.Get, new { @class = "form-inline" }))
+{
+<div class="form-group">
+    @Html.Label("Tìm theo tên cây: ", new { @class = "control-label" })
+    @Html.TextBox("searchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+    <input id="Submit1" type="submit" value="Tìm kiếm" class="btn btn-primary" />
+</div>
+}
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-success" })
+</p>
+<h4 class="text-success">@TempData["nofi"]</h4>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Tên vùng</th>
+            <th>@Html.ActionLink("Tên cây", "Index", new { SortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })</th>
+            <th>Mô tả cây</th>
+            <th>Giá cây</th>
+            <th>Hình ảnh</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Area.NameArea)</td>
+                <td>@Html.DisplayFor(modelItem => item.NameTree)</td>
+                <td>@Html.DisplayFor(modelItem => item.DescriptionTree)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td class="text-center"><img src="@Url.Content(item.ImageTree)" alt="Image" width="450" height="200" /></td>
+                <td>
+                    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.TreeID }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.TreeID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            Trang @(Model.PageNumber < 0 ? 0 : Model.PageNumber) / @Model.PageCount
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex justify-content-end">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item @(Model.PageNumber == 1 ? "disabled" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { page = 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })" aria-label="First">
+                                <span aria-hidden="true">&laquo;&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item @(Model.PageNumber == 1 ? "disabled" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        @for (int i = 1; i <= Model.PageCount; i++)
+                        {
+                            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("Index", new { page = i, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })">
+                                    @i
+                                </a>
+                            </li>
+                        }
+                        <li class="page-item @(Model.PageNumber == Model.PageCount ? "disabled" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item @(Model.PageNumber == Model.PageCount ? "disabled" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { page = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })" aria-label="Last">
+                                <span aria-hidden="true">&raquo;&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

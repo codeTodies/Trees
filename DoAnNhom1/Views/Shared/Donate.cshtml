@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+    <link rel="shortcut icon" href="~/image/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="~/Content/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="~/Content/assets/dn.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="container-fluid px-lg-5">
+                <nav class="navbar navbar-expand-custom navbar-mainbg">
+                    <a class="navbar-brand" href="/Home/Index">                       
+                            <img src="~/image/logoGR.png" class="img-fluid " style=" margin:-3px 0px 0px 0px;">                     
+                    </a>
+                    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars text-white"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+
+
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer id="Contact" class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+            <!-- Right -->
+
+            <div class="social-btn">
+                <a href='https://www.facebook.com/huflit.edu.vn' target="_blank" class="me-4 text-reset">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href='https://twitter.com/' target="_blank" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href='https://www.instagram.com/' target="_blank" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+        <!-- Section: Links  -->
+        <section>
+
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fa fa-tree"></i> Sứ mệnh của GreenRoot
+                        </h6>
+                        <p>
+                            Sứ mệnh của chúng tôi là bảo vệ và duy trì sự cân bằng giữa con người và tự nhiên. Và chúng tôi cũng đang hướng đến mục tiêu lớn hơn, đó là xây dựng một thế giới bền vững, nơi mà con người sống hài hòa với môi trường xung quanh mình.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Dịch vụ
+                        </h6>
+                        <p>
+                            <a href="#" class="text-reset text-decoration-none">Quyên góp</a>
+                        </p>
+                        <p>
+                            <a href="#" class="text-reset text-decoration-none">Tham gia cùng chúng tôi</a>
+                        </p>
+                        <p>
+                            <a href="#" class="text-reset text-decoration-none">Tin tức</a>
+                        </p>
+                        <p>
+                            <a href="#" class="text-reset text-decoration-none">Về chúng tôi</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Chính sách
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset text-decoration-none">Điều khoản</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset text-decoration-none">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset text-decoration-none">Chính sách bảo mật</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset text-decoration-none">Trợ giúp</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Liên Hệ</h6>
+                        <p> <i class="fas fa-house"></i> Trường đại học Ngoại ngữ - Tin học TPHCM</p>
+
+
+                        <p>
+                            <i class="fas fa-inbox"></i>  GreenRoots@gmail.com
+                        </p>
+                        <p> <i class="fas fa-phone"></i> + 0797 841 166</p>
+                        <p> <i class="fas fa-phone"></i> + 0778 706 084</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            Version 01 © 2023 Copyright
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <div id="gotop"></div>
+
+
+    <!-- Thêm các tài liệu JavaScript của Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Content/slick/slick.min.js"></script>
+    <script>
+
+        $('.responsive').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+            ]
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/BTT/jquery.gotop.js"></script>
+    <script src="~/Content/assets/dn.js"></script>
+
+    <script>
+        $('#gotop').gotop({
+            customHtml: '<i class="fa fa-angle-up fa-2x"></i>',
+            bottom: '2em',
+            right: '2em'
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var navbar = $('.header-inner');
+            $(window).scroll(function () {
+                if ($(window).scrollTop() <= 40) {
+                    navbar.removeClass('navbar-scroll');
+                } else {
+                    navbar.addClass('navbar-scroll');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

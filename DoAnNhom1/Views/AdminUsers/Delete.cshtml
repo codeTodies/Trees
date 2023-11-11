@@ -1,0 +1,48 @@
+﻿@model DoAnNhom1.Models.AdminUser
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center">Xóa người dùng</h2>
+
+<h3 class="text-danger">Bạn có chắc muốn xóa tài khoản này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên người dùng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameUser)
+        </dd>
+
+        <dt>
+            Quyền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoleUser)
+        </dd>
+
+        <dt>
+           Mật khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordUser)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay về danh sách", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

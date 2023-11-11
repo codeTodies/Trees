@@ -1,0 +1,3 @@
+﻿@model DoAnNhom1.Models.Area
+@Html.DropDownListFor(model => model.IDArea,
+new SelectList(Model.ListArea.OrderBy(model => model.NameArea), "IDArea", "NameArea"), "--Chọn khu vực --")

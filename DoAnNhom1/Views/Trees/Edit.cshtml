@@ -1,0 +1,65 @@
+﻿@model DoAnNhom1.Models.Tree
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center">Chỉnh sửa cây</h2>
+
+
+<h4 class="text-danger">@ViewBag.nofi</h4>
+@using (Html.BeginForm("Edit", "Trees", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form" }))
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.TreeID)
+
+                <div class="form-group">
+                    Tên cây
+                    @Html.EditorFor(model => model.NameTree, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NameTree, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="form-group">
+                   Khu vực trồng cây
+                    @Html.DropDownListFor(model => model.IDArea, ViewBag.Regions as SelectList, "--Select Area --", new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    Mô tả cây
+                    @Html.EditorFor(model => model.DescriptionTree, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DescriptionTree, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    Giá cây
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                   Hình ảnh cây
+                    <img src="@Url.Content(Session["imgPath"].ToString())" class="img-fluid" id="previewImg" />
+                    <input type="file" name="UploadImage" class="form-control-file" onchange="ChangeImage(this, document.getElementById('previewImg'))" />
+                </div>
+
+                <div class="form-group">
+                        <input type="submit" value="Lưu thay đổi" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay về danh sách", "Index", null, new { @class = "btn btn-secondary" })
+</div>
+<script src="~/Scripts/script.js"></script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

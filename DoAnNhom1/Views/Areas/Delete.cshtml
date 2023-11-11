@@ -1,0 +1,48 @@
+﻿@model DoAnNhom1.Models.Area
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center">Xóa vùng</h2>
+
+<h3 class="text-danger">Bạn có chắc muốn xóa vùng này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên miền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region.NameRe)
+        </dd>
+
+        <dt>
+           Hình ảnh vùng
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.ImgArea)" alt="Image" width="450" height="200" />
+        </dd>
+
+        <dt>
+           Tên vùng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameArea)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay về danh sách", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

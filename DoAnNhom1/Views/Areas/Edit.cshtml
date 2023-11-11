@@ -1,0 +1,50 @@
+﻿@model DoAnNhom1.Models.Area
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center">Chỉnh sửa vùng</h2>
+@using (Html.BeginForm("Edit", "Areas", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form" }))
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.IDArea)
+
+                <div class="form-group">
+                    Tên vùng
+                    @Html.EditorFor(model => model.NameArea, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NameArea, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="form-group">
+                    Tên miền
+                    @Html.DropDownListFor(model => model.IDRe, ViewBag.Regions as SelectList, "--Select Region --", new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    Hình ảnh vùng
+                    <img src="@Url.Content(Session["imgPath"].ToString())" class="img-fluid" id="previewImg" />
+                    <input type="file" name="UploadImage" class="form-control-file" onchange="ChangeImage(this, document.getElementById('previewImg'))" />
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Lưu thay đổi" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay về danh sách", "Index", null, new { @class = "btn btn-secondary" })
+</div>
+<script src="~/Scripts/script.js"></script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

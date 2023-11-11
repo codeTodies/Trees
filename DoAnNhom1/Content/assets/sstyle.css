@@ -1,0 +1,416 @@
+﻿/*header*/
+.header{position: relative;
+width: 100%;
+}
+
+/*.header-inner{position: absolute;
+top: 0;
+left: 0;
+width:100%;
+z-index: 99;
+background-color: transparent;
+}*/
+.header-inner {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: black;
+    z-index: 99;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition-duration: 0.6s;
+}
+
+.logo {
+    color: #000;
+    font-weight: 500;
+}
+.logo img {
+    border-radius:20%;
+}
+
+.nav-item .nav-link {
+    display: block;
+    line-height: 36px;
+    text-transform: capitalize;
+    font-size: 19px;
+    font-weight: 500;
+    color: black;
+    transition: 0.15s;  
+}
+
+    .nav-item .nav-link:hover {
+        color: #bcb0b0;
+    }
+/*.header-btn {
+    color: #ffffff;
+    background-color: #fe4066;
+}*/
+.header-btn {
+    color: #ffffff;
+    border-radius: 30px;
+    background-color: #FE4066;
+    border: none;
+    font-weight: 500;
+    outline: none;
+    font-size: 20px;
+    padding: 7px 22px;
+    transition: 0.5s;
+}
+.Login-btn {
+    color: #ffffff;
+    border-radius: 30px;
+    background-color: #4b35ffa6;
+    border: none;
+    font-weight: 500;
+    outline: none;
+    font-size: 20px;
+    padding: 7px 22px;
+    transition: 0.5s;
+}
+/*.Login-btn {
+    color: #ffffff;
+    background-color: #4b35ffa6;
+}
+*/
+
+/*.navbar-scroll{background-color: #ffffff;
+padding: 0;
+position: fixed;
+top:0;
+z-index: 99;
+box-shadow:0px 1px 10px rgba(0,0,0,0.4);
+transition-duration: 0.6s; }
+
+.navbar-scroll .nav-item .nav-link{
+    color: black;                              
+}
+
+.navbar-scroll .header-btn{color: #ffffff;
+background-color: #fe4066;
+}
+    .navbar-scroll .Login-btn {
+        color: #ffffff;
+        background-color: #4b35ffa6;
+    }
+.navbar-scroll .logo{color: #000;
+font-weight: 500;
+}*/
+
+
+
+.hidden {
+    top: -100px;
+}
+.nav-logo img {
+    width: 20%;
+    height: 20%;
+}
+.nav-logo span{
+    font-weight:700;
+}
+.nav-item{
+    font-size:1rem;
+}
+.nav-link {
+    margin: 0.4rem;
+}
+.nav-logo img {
+    border-radius: 40%;
+}
+/* Search */
+
+#searchParent {
+    position: relative;
+    display: inline-block;
+}
+
+#inputParent {
+    position: absolute;
+    left: -200px;
+    transition: left 0.3s ease;
+}
+
+#searchParent:hover #inputParent {
+    left: 0;
+}
+
+#input-bar {
+    width: 200px;
+    padding: 5px;
+}
+
+/*Endheader*/
+/*banner*/
+
+.banner {
+    background-image: url(/image/background.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.img-test{
+
+}
+.banner-about {
+    background-image: url(/image/thongdiep1.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.banner-learn {
+    background-image: url(/image/banner-learn.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-button a {
+    width: 40%;
+    height: 4rem;
+    font-size: 1.5rem;
+}
+.banner-title {
+    font-weight: 800;
+    text-shadow: 5px 1px 3px rgb(0 0 0 / 55%);
+}
+/*ENDbanner*/
+/*thongdiep*/
+.becomebusiness {
+    background-image: url(/image/thongdiep1.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    opacity: 95%;
+}
+
+.together-plant {
+    background-image: url(/image/togtether-plant.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    opacity: 99%;
+}
+
+.PlantTrees-bg {
+    background-color: #1e3937;
+    background-size: cover;
+    background-position: center;
+    opacity: 99%;
+}
+
+
+
+
+
+        .thumbnail {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thumbnail img {
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail:hover img {
+      transform: scale(1.1);
+    }
+
+    .thumbnail .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .thumbnail:hover .caption {
+      opacity: 1;
+    }
+
+    .thumbnail .caption a {
+      color: #fff;
+      text-decoration: none;
+    }
+.together-content .title p{
+    color: white;
+    font-weight: 800;
+    font-size: 3rem;
+    text-shadow: 5px 1px 3px rgb(0 0 0 / 55%);
+}
+
+
+.social-btn a {
+    text-decoration: none
+}
+    
+/*thongdiep*/
+
+
+
+/*hover PlantTrees */
+.overlay {
+    position: relative;
+}
+
+    .overlay:hover img {
+        opacity: 0.5;
+    }
+overlay-sm {
+    position: relative;
+}
+    .overlay-sm:hover img {
+        opacity: 0.9;
+    }
+
+.view-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.view-button-bottom {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+    .view-button button, .view-button-bottom button {
+        width: 200px;
+    }
+
+
+.overlay:hover .view-button, .overlay:hover .view-button-botton {
+    opacity: 1;
+}
+.overlay-sm:hover .view-button, .overlay-sm:hover .view-button-bottom {
+    opacity: 1;
+}
+
+/*testi*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+
+figure.snip1139 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 220px;
+    max-width: 310px;
+    width: 100%;
+    color: #333;
+    text-align: left;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+    figure.snip1139 * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+        transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+
+    figure.snip1139 img {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    figure.snip1139 blockquote {
+        position: relative;
+        background-color: #ffffff;
+        padding: 25px 50px 25px 50px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-align: left;
+        margin: 0;
+        line-height: 1.6em;
+        font-style: italic;
+    }
+
+        figure.snip1139 blockquote:before,
+        figure.snip1139 blockquote:after {
+            font-family: 'FontAwesome';
+            content: "\201C";
+            position: absolute;
+            font-size: 50px;
+            opacity: 0.3;
+            font-style: normal;
+        }
+
+        figure.snip1139 blockquote:before {
+            top: 25px;
+            left: 20px;
+        }
+
+        figure.snip1139 blockquote:after {
+            content: "\201D";
+            right: 20px;
+            bottom: 0;
+        }
+
+    figure.snip1139 .arrow {
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 25px solid #ffffff;
+        margin: 0;
+        position: absolute;
+    }
+.slick-dots {
+    text-align: center;
+    margin-top: 10px; /* Khoảng cách giữa hình ảnh và các dots */
+}
+
+    .slick-dots li button {
+        width: 12px; /* Điều chỉnh chiều rộng của dot */
+        height: 12px; /* Điều chỉnh chiều cao của dot */
+        border-radius: 50%; /* Làm cho dot trở thành hình tròn */
+        background-color: grey; /* Màu nền của dot khi chưa được chọn */
+        border: 2px solid white; /* Độ dày và màu viền của dot */
+        margin: 0 5px; /* Khoảng cách giữa các dots */
+    }
+
+    .slick-dots li.slick-active button {
+        background-color: green; /* Màu nền của dot khi được chọn */
+    }
+
+    figure.snip1139 .author {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 5px 25px;
+        color: #000000;
+        background-color: #ffffff;
+        margin: 0;
+        
+    }
+
+        figure.snip1139 .author h5 {
+            opacity: 0.8;
+            margin: 0;
+            font-weight: 500;           
+        }
+
+            figure.snip1139 .author h5 span {
+                font-weight: 400;
+                text-transform: none;
+                color: #33CC66;
+                padding-left: 5px;
+            }
+
+
+

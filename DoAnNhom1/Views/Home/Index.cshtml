@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+
+<link href="~/Content/assets/styles.css" rel="stylesheet" />
+<div class="banner d-flex align-items-center justify-content-center img-fluid">
+    <div class="banner-content">
+        <h1 class="banner-title text-white mb-4">Cùng chúng tôi trồng cây, bảo vệ Trái Đất</h1>
+        <div class="banner-button text-center">
+            <button class="btn btn-light text-uppercase mr-3" id="plantTreesButton">Trồng Cây</button>
+        </div>
+    </div>
+</div>
+<section class="section">
+    <h2 class="title text-center text-uppercase font-weight-bold m-4">Nơi Muốn Trồng</h2>
+    <hr />
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="thumbnail mt-3 overlay-sm">
+                        <img src="@Url.Content(item.ImgRe)" alt="mb" class="img-fluid" @*style="width:30vw;height:50vh"*@>
+                        <div class="view-button-bottom">
+                            @Html.ActionLink("View All", "Index", "PlantTrees", new { id = item.IDRe }, new { @class = "btn btn-outline-light btn-lg btn-block font-weight-bold text-uppercase" })
+                            @*<button class="btn btn-outline-light btn-lg btn-block font-weight-bold text-uppercase">View all</button>*@
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<div style="padding-top:8.2rem;" class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="~/image/home-3.png" alt="Circle Image" class="" style="margin-left:10px;width:100%;">
+        </div>
+        <div class="col-md-6 m-auto text-center">
+            <p style="font-size:2.5rem;">PLANT A TREE TODAY TO DOUBLE YOUR IMPACT</p>
+            <p class="">Any donations made to our community fundraiser from Plant a Tree Day (September 28th) until October 28th (or until our goal is reached), will be matched by One Tree Planted.</p>
+            <button class="btn btn-danger ">Plant Trees</button>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div id="GioiThieu" class="title text-uppercase text-center m-3">
+    </div>
+    <div class="becomebusiness d-flex align-items-center justify-content-center img-fluid">
+        <div class="banner-ct text-center">
+            <h1 class="banner-title text-white mb-4">SUSTAINABILITY FOR BUSINESSES</h1>
+            <h5 class="banner-title text-white mb-4">MAKE A REAL IMPACT AND IMPROVE YOUR COMPANY'S SUSTAINABILITY INITIATIVES IN 2023</h5>
+            <div class="banner-button text-center">
+                <button class=" btn btn-secondary text-uppercase mr-3">BECOME A BUSINESS PARTNER</button>
+            </div>
+        </div>
+    </div>
+    @*<div id="TrongRung">
+
+            <div class="together-plant d-flex align-items-center justify-content-center img-fluid">
+                <div class="banner-content">
+                    <h1 class="banner-title text-white mb-4">Cùng Trồng Rừng Với Chúng Tôi</h1>
+                    <div class="banner-button text-center">
+                        <button class=" btn btn-outline-light text-uppercase mr-3">Về Chúng Tôi</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+</div>
+
+<div class="container-fluid mt-4">
+    <h2 class="title text-center text-uppercase font-weight-bold m-4">Đôi lời từ nhóm phát triển</h2>
+    <div class="responsive">
+        <div class="author">
+            <figure class="snip1139">
+                <blockquote>
+                    Tôi luôn có niềm yêu thích trồng cây và chăm sóc thiên nhiên. Thông qua trang web này, tôi hy vọng chia sẻ niềm đam mê của mình với mọi người, đồng thời kêu gọi mọi người cùng tham gia trồng cây vì một môi trường xanh hơn.
+                    <div class="arrow"></div>
+                </blockquote>
+                <img src="~/image/vphs.jpg" alt="sample3" />
+                <div class="author">
+                    <h5>Sang Vu <span>- Founder</span></h5>
+                </div>
+            </figure>
+        </div>
+        <div class="author">
+            <figure class="snip1139">
+                <blockquote>
+                    Tôi luôn yêu thích thiên nhiên và mong muốn góp phần bảo vệ môi trường sống. Đối với tôi, trồng cây không chỉ đơn thuần là cây này cây nọ, mà nó mang ý nghĩa sâu xa hơn rất nhiều. <br /><br />
+                    <div class="arrow"></div>
+                </blockquote>
+                <img src="~/image/lts.jpg" alt="sample3" />
+                <div class="author">
+                    <h5>Sang Le <span>- Co-Founder</span></h5>
+                </div>
+            </figure>
+        </div>
+        <div class="author">
+            <figure class="snip1139">
+                <blockquote>
+                    Mỗi lần cầm cây con nhỏ bé trong tay, tôi lại cảm thấy trách nhiệm cho sự phát triển của chúng trong tương lai. Tôi hiểu rằng, chúng sẽ lớn lên và mang lại nhiều lợi ích cho môi trường xung quanh.<br /><br />
+                    <div class="arrow"></div>
+                </blockquote>
+                <img src="~/image/tvk.jpg" alt="sample3" />
+                <div class="author">
+                    <h5>Khai Tran <span>- Designer</span></h5>
+                </div>
+            </figure>
+        </div>
+        <div class="author">
+            <figure class="snip1139">
+                <blockquote>
+                    Quá trình chăm sóc và theo dõi sự phát triển của cây cũng là niềm vui lớn đối với tôi. Điều đó khiến tôi cảm thấy tự hào. Tôi biết rằng, chính tay mình đã góp phần làm nên sự thay đổi đó.<br /><br />
+                    <div class="arrow"></div>
+                </blockquote>
+                <img src="~/image/ltn.jpg" alt="sample3" />
+                <div class="author">
+                    <h5>Nghia Le <span>- Content Creator</span></h5>
+                </div>
+            </figure>
+        </div>
+    </div>
+    <div style="position:absolute" class="pagination-container"></div>
+</div>
+<script>
+    document.getElementById("plantTreesButton").addEventListener("click", function() {
+        window.location.href = '@Url.Action("Indexs", "PlantTrees", new { area = "" })';
+    });
+</script>
